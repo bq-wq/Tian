@@ -1,0 +1,14 @@
+﻿
+*.class
+
+*.jar
+*.iml
+*.war
+
+.idea
+
+*.txt
+
+db.properties
+
+!abc.txt
