@@ -278,7 +278,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="183" />
     <option name="y" value="28" />
     <option name="width" value="1283" />
@@ -474,7 +474,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571897553300" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571898005587" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../shiro_gp04_02" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -697,7 +697,7 @@
       <workItem from="1571702114383" duration="10608000" />
       <workItem from="1571716592556" duration="3320000" />
       <workItem from="1571721440162" duration="65920000" />
-      <workItem from="1571875376572" duration="14969000" />
+      <workItem from="1571875376572" duration="15289000" />
     </task>
     <servers />
   </component>
@@ -734,7 +734,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116713000" />
+    <option name="totallyTimeSpent" value="117033000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
