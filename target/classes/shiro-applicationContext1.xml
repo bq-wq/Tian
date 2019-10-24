@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    dtd : document type definition    xxx.dtd  xxx2.dtd
+    xsd : xml schema definition       xxx.xsd  xxx2.xsd
+    文档约束：标签，顺序，层级，属性
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="myrealm" class="com.qf.realm.MyRealm">
+        <property name="userService" ref="userServiceImpl"/>
+        <property name="roleService" ref="roleServiceImpl"/>
+        <property name="permissionService" ref="permissionServiceImpl"/>
+
+        <!--密码比对器-->
+        <property name="credentialsMatcher">
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+                <property name="hashAlgorithmName" value="SHA-256"/>
+
+                <property name="storedCredentialsHexEncoded" value="false"/>
+                <property name="hashIterations" value="10000"></property>
+            </bean>
+        </property>
+    </bean>
+
+    <!--声明 SecurityManager -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="myrealm"/>
+    </bean>
+
+    <!--  shiroFilter-->
+    <!--生产SpringShiiroFilter
+    ( 持有shiro的过滤相关规则，可进行请求的相关校验  检验请求是否合法)
+    -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <!--注入的核心对象-->
+        <property name="securityManager" ref="securityManager"/>
+        <!--未登录 -->
+        <property name="loginUrl" value="/user/login"/>
+        <property name="unauthorizedUrl" value="error.jsp"/>
+        <!--过滤器链-->
+        <property name="filterChainDefinitions">
+            <value>
+                /user/query=anon
+                /user/insert=authc,roles["banfu"]
+
+
+            </value>
+
+        </property>
+
+    </bean>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qf.dao.Goods1DAO">
+
+    <!--主页列表显示前4条 应该用关联查询查其价格-->
+    <select id="queryall" resultType="Goods1">
+        select * from goods1 where typeid = #{typeid} limit 0,4
+
+    </select>
+
+    <!--按分页查询和价格排序-->
+    <select id="queryall1" resultType="Goods1">
+        select * from goods1 where typeid = #{typeid}
+
+        <if test="price != null and price != ''">
+            order by price asc
+        </if>
+
+
+    </select>
+    <!--推荐商品 -->
+    <select id="queryPx" resultType="Goods1">
+
+    SELECT g1.id,title,imapath,g1.price,g1.typeid,pubdate FROM goods1 g1
+     LEFT OUTER JOIN goods g ON g1.id=g.id ORDER BY pubdate DESC LIMIT 0,2
+
+
+    </select>
+
+
+
+
+
+
+</mapper>
