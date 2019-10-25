@@ -43,6 +43,7 @@ public class MyRealm extends AuthorizingRealm {
         //获取用户登入发来的用户名
         String username = (String) Token.getPrincipal();
         System.out.println("-------"+username);
+
         User user  = userService.queryUserByUsername(username);
         //判断用户信息是否为空
         if(user==null){

@@ -3,12 +3,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
+	<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>天天生鲜-商品详情</title>
-	<link rel="stylesheet" type="text/css" href="../css/reset.css">
-	<link rel="stylesheet" type="text/css" href="../css/main.css">
-
-</head>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">
+	</head>
 <body>
 	<div class="header_con">
 		<div class="header">
@@ -18,30 +18,30 @@
 					欢迎您：<em>张 山</em>
 				</div>
 				<div class="login_btn fl">
-					<a href="login.jsp">登录</a>
+					<a href="WEB-INF/login.jsp">登录</a>
 					<span>|</span>
-					<a href="register.jsp">注册</a>
+					<a href="WEB-INF/register.jsp">注册</a>
 				</div>
 				<div class="user_link fl">
 					<span>|</span>
-					<a href="user_center_info.jsp">用户中心</a>
+					<a href="WEB-INF/user_center_info.jsp">用户中心</a>
 					<span>|</span>
-					<a href="cart.jsp">我的购物车</a>
+					<a href="WEB-INF/cart.jsp">我的购物车</a>
 					<span>|</span>
-					<a href="user_center_order.jsp">我的订单</a>
+					<a href="WEB-INF/user_center_order.jsp">我的订单</a>
 				</div>
 			</div>
 		</div>		
 	</div>
 
 	<div class="search_bar clearfix">
-		<a href="../index.jsp" class="logo fl"><img src="../images/logo.png"></a>
+		<a href="index.jsp" class="logo fl"><img src="${pageContext.request.contextPath}/images/logo.png"></a>
 		<div class="search_con fl">
 			<input type="text" class="input_text fl" name="" placeholder="搜索商品">
 			<input type="button" class="input_btn fr" name="" value="搜索">
 		</div>
 		<div class="guest_cart fr">
-			<a href="cart.jsp" class="cart_name fl">我的购物车</a>
+			<a href="WEB-INF/cart.jsp" class="cart_name fl">我的购物车</a>
 			<div class="goods_count fl" id="show_count">1</div>
 		</div>
 	</div>
@@ -91,15 +91,36 @@
 			<div class="goods_num clearfix">
 				<div class="num_name fl">数 量：</div>
 				<div class="num_add fl">
-					<input type="text" class="num_show fl" value="1">
-					<a href="javascript:;" class="add fr">+</a>
-					<a href="javascript:;" class="minus fr">-</a>	
-				</div> 
+					<input type="text" class="num_show fl" value="1" id="number">
+					<a href="javascript:;" class="add fr" id="numadd">+</a>
+					<a href="javascript:;" class="minus fr" id="numsub">-</a>
+				</div>
+				<script type="text/javascript">
+
+
+					$("#numadd").click(function () {
+						var num1=0;
+						var value = $("#number").val();
+						num1=parseInt(value)+1;
+						$("#number").attr("value",num1)
+                    })
+					$("#numsub").click(function () {
+						var num2=0;
+						var val = $("#number").val();
+						num2 = parseInt(val)-1;
+						if(num2 < 1){
+						    num2=1;
+						}
+						$("#number").attr("value",num2);
+                    })
+				</script>
+
+
 			</div>
-			<div class="total">总价：<em>16.80元</em></div>
+			<div class="total">总价：<em>${goods.price}元</em></div>
 			<div class="operate_btn">
 				<a href="javascript:;" class="buy_btn">立即购买</a>
-				<a href="javascript:;" class="add_cart" id="add_cart">加入购物车</a>				
+				<a href="${pageContext.request.contextPath}/cart/addcart?pid=${goods.id}&num=1&uid=${48};" class="add_cart" id="add_cart">加入购物车</a>
 			</div>
 		</div>
 	</div>
@@ -162,7 +183,7 @@
 	</div>
 	<div class="add_jump"></div>
 
-	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.12.2.js"></script>
+<%--	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.12.2.js"></script>
 	<script type="text/javascript">
 		var $add_x = $('#add_cart').offset().top;
 		var $add_y = $('#add_cart').offset().left;
@@ -182,7 +203,7 @@
 
 			});
 		})
-	</script>
+	</script>--%>
 	
 </body>
 </html>

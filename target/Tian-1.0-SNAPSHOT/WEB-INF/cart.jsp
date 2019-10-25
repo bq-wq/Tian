@@ -1,12 +1,82 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>天天生鲜-购物车</title>
 	<link rel="stylesheet" type="text/css" href="../css/reset.css">
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
+
+<script type="text/javascript">
+    //function pNum(pid,p,no){
+      //  $.ajax({
+        //    url:"cartservlet?method=addCartAjax&goodsId="+pid+"&number=1",
+         //   type:"get",
+           // success:function(){
+           //     location.href = "cartservlet?method=getCart";
+          //  },
+         //   error:function(){
+          //      alert("服务器异常");
+         //   }
+      //  })
+   // }
+    function mNum(pid,p,no){
+        var num = -1; //数量
+        var nums = $("#num_count"+no).val();
+        if(Number(nums)<=1){
+            if(confirm("确认要删除吗?")){
+                num = 0;
+            }else{
+                return;
+            }
+        }
+        $.ajax({
+            url:"cartservlet?method=addCartAjax&goodsId="+pid+"&number="+num,
+            method:"get",
+            success:function(){
+                location.href = "cartservlet?method=getCart";
+            },
+            error:function(){
+                alert("服务器异常");
+            }
+        })
+    }
+    function deleteCart(pid){
+        if(confirm("确认要删除吗")){
+            $.ajax({
+                url:"cartservlet?method=addCartAjax&goodsId="+pid+"&number=0",
+                method:"get",
+                success:function(){
+                    location.href = "cartservlet?method=getCart";
+                },
+                error:function(){
+                    alert("服务器异常");
+                }
+            })
+        }
+    }
+
+    function clearCart(){
+        if(confirm("确定要清空吗")){
+            $.ajax({
+                url:"cartservlet?method=clearCartAjax",
+                method:"get",
+                success:function(){
+                    location.href = "cartservlet?method=getCart";
+                },
+                error:function(){
+                    alert("服务器异常");
+                }
+            })
+        }
+    }
+</script>
+
+
+
+
 <body>
 	<div class="header_con">
 		<div class="header">
@@ -50,7 +120,28 @@
 		<li class="col05">小计</li>
 		<li class="col06">操作</li>
 	</ul>
-	<ul class="cart_list_td clearfix">
+	<c:forEach var="fg" items="${list}">
+		<ul class="cart_list_td clearfix">
+			<li class="col01"><input type="checkbox" name="" checked></li>
+			<li class="col02"><img src="../images/${fg.imapath}"></li>
+			<li class="col03">${fg.name}<br><em>25.80元/500g</em></li>
+			<li class="col04">500g</li>
+			<li class="col05">${fg.price/fg.num}元</li>
+			<li class="col06">
+				<div class="num_add">
+					<a href="javascript:;" class="add fl">+</a>
+					<input type="text" class="num_show fl" value="${fg.num}">
+					<a href="javascript:;" class="minus fl">-</a>
+				</div>
+			</li>
+			<li class="col07">${fg.price}元</li>
+			<li class="col08"><a href="javascript:;">删除</a></li>
+		</ul>
+	</c:forEach>
+
+
+
+	<%--<ul class="cart_list_td clearfix">
 		<li class="col01"><input type="checkbox" name="" checked></li>
 		<li class="col02"><img src="../images/goods/goods012.jpg"></li>
 		<li class="col03">奇异果<br><em>25.80元/500g</em></li>
@@ -83,7 +174,7 @@
 		<li class="col07">16.80元</li>
 		<li class="col08"><a href="javascript:;">删除</a></li>
 	</ul>
-	
+	--%>
 
 	<ul class="settlements">
 		<li class="col01"><input type="checkbox" name="" checked=""></li>

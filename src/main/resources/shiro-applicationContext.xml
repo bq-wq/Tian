@@ -54,19 +54,22 @@
         <!-- 注入核心对象 -->
         <property name="securityManager" ref="securityManager"/>
         <!-- 未登录，没权限时的跳转路径 -->
-        <!--<property name="loginUrl" value="/user/login"/>
-        <property name="unauthorizedUrl" value="/user/perms/error"/>-->
+       <property name="loginUrl" value="/user/login"/>
+        <!-- <property name="unauthorizedUrl" value="/user/perms/error"/>-->
         <!-- 过滤器链 -->
-        <!--<property name="filterChainDefinitions">
+        <property name="filterChainDefinitions">
             <value>
+
+                /cart/addcart=authc
+                <!-- /user/query=anon
                 /user/all=authc,roles["banzhang"]
                 /user/logout=logout
-                &lt;!&ndash;/user/insert=authc,roles["banfu"]
+                /user/insert=authc,roles["banfu"]
                 /user/update=authc,perms[""student:update""]
-                /order/insert=authc,roles["xuewei"]
-                &ndash;&gt;
+                /order/insert=authc,roles["xuewei"]-->
+
             </value>
-        </property>-->
+        </property>
     </bean>
 
    <!-- &lt;!&ndash; 记住我的Cookie &ndash;&gt;

@@ -19,17 +19,17 @@ public class Goods1ServiceImpl implements Goods1Service {
 
 
     @Autowired
-    private Goods1DAO goodsDAO;
+    private Goods1DAO goods1DAO;
 
     @Override
     public List<Goods1> queryall(int typeid) {
-        return goodsDAO.queryall(typeid);
+        return goods1DAO.queryall(typeid);
     }
 
     @Override
     public PageInfo<Goods1> queryall1(int typeid , Integer pageNum, Integer pageSize,String price) {
         PageHelper.startPage(pageNum,pageSize);
-        List<Goods1>  list =goodsDAO.queryall1(typeid,price);
+        List<Goods1>  list =goods1DAO.queryall1(typeid,price);
         PageInfo<Goods1> pageInfo = new PageInfo<>(list);
 
 
@@ -42,7 +42,12 @@ public class Goods1ServiceImpl implements Goods1Service {
 
     @Override
     public List<Goods1> queryPx() {
-        return goodsDAO.queryPx();
+        return goods1DAO.queryPx();
+    }
+
+    @Override
+    public Goods1 queryID(Integer id) {
+        return goods1DAO.queryID(id);
     }
 
 

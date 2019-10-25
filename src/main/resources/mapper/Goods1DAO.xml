@@ -31,7 +31,11 @@
 
     </select>
 
+    <select id="queryID" resultType="Goods1">
 
+        select * from goods1 where  id = #{id}
+
+    </select>
 
 
 

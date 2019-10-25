@@ -1,9 +1,9 @@
 package com.qf;
 
-import com.qf.dao.GoodsDAO;
+import com.qf.dao.CartDAO;
 import com.qf.dao.GoodsTypeDAO;
 import com.qf.dao.UserDAO;
-import com.qf.pojo.Goods;
+import com.qf.pojo.Cart;
 import com.qf.pojo.GoodsType;
 import com.qf.pojo.User;
 import org.junit.Test;
@@ -47,9 +47,14 @@ public class Test01 {
     @Test
     public void dAoGoods1(){
         ClassPathXmlApplicationContext context  = new ClassPathXmlApplicationContext("applicationContext.xml");
-        GoodsDAO goodsDAO =context.getBean("goodsDAO",GoodsDAO.class);
+        CartDAO cartDAO = context.getBean("cartDAO",CartDAO.class);
+        Cart cart = cartDAO.findByUidPid(48,1 );
+        System.out.println(cart);
+
+
+        /* GoodsDAO goodsDAO =context.getBean("goodsDAO",GoodsDAO.class);
         Goods goods =goodsDAO.queryId(2);
-        System.out.println(goods.toString());
+        System.out.println(goods.toString());*/
 
         /*Goods1DAO goodsDAO = context.getBean("goods1DAO", Goods1DAO.class);
             List<Goods1> list2 = goodsDAO.queryall();

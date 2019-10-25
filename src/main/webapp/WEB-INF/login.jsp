@@ -24,32 +24,29 @@
 	var vcode1 = false;
 
 
-  /*      //1.验证验证码是否正确
-        $('#vcode').change(function () {
-            $.get(/user/test3", "valcode=" + this.value, function (data) {
-                if (data == 0) {
-                    $('#vcode').html("验证码错误!").css("color", "red");
-                } else {
-                    $('#vcode').html("");
-                }
-            })
-        });
-    });*/
+    function refreshCode04(a){
+        //刷新验证码
+        a.src="${pageContext.request.contextPath}/user/test2?"+new Date().getTime();
+    }
+
+
+
      $(function () {
 
          $("#vcode").change(function () {
              $.get("${pageContext.request.contextPath}/user/test3", "valcode=" + this.value, function (data) {
                  if (data == 1) {
                      $('#vcode').html("验证码错误!").css("color", "red");
+                     $("#login").Attr("disabled",true);
                      vcode1=false;
                  } else {
                      $('#vcode').html("ok");
                      vcode1= true;
 
+
                  }
              })
          })
-	 })
 
 
 	$("#login").click(function () {
@@ -71,6 +68,7 @@
 		}
 
     })
+     })
 
 </script>
 
@@ -100,17 +98,6 @@
 						<div class="pwd_error">输入错误</div>
 
 
-
-
-							<script>
-                                function refreshCode04(a){
-                                    //刷新验证码
-                                    a.src="${pageContext.request.contextPath}/user/test2?"+new Date().getTime();
-                                }
-
-
-
-							</script>
 
 						<div style="position: absolute;left: 0;top: 120px;">
 							<img onclick="refreshCode04(this);" src="${pageContext.request.contextPath}/user/test2">

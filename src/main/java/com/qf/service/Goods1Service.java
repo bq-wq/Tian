@@ -21,4 +21,5 @@ public interface Goods1Service {
 
     List<Goods1> queryPx();
 
+    Goods1 queryID(Integer id);
 }

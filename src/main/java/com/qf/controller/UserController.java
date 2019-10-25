@@ -59,8 +59,10 @@ public class UserController {
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(),user.getPassword());
         System.out.println(token);
         subject.login(token);
+
         response.setContentType("text/html;charset=utf-8");
        response.getWriter().write("1");
+
         return "index";
 
     }

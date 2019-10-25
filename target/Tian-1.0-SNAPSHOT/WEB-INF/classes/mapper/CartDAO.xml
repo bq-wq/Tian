@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qf.dao.CartDAO">
+
+
+    <select id="findByUidPid" resultType="Cart">
+
+        select  * from cart where   pid=#{pid} and  uid=#{uid}
+
+
+    </select>
+
+        <insert id="addCart" parameterType="Cart">
+            insert into cart(name,uid,price,num)values(#{name},#{uid},#{price},#{num});
+
+
+        </insert>
+
+        <update id="updateCart" parameterType="Cart">
+        update cart set name=#{name},uid=#{uid},price=#{price},num=#{num} where pid=#{pid}
+
+        </update>
+
+        <select id="queryAll" resultType="Cart">
+             SELECT  c.pid,c.name,c.uid,c.price,c.num,g.imapath
+              FROM cart c LEFT OUTER JOIN goods1 g ON g.id = c.pid
+
+
+        </select>
+
+</mapper>

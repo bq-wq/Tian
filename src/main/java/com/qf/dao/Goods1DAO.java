@@ -18,4 +18,5 @@ public interface Goods1DAO {
     List<Goods1> queryPx();
 
 
+    Goods1 queryID(@Param("id") Integer id);
 }

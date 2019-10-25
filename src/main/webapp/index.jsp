@@ -8,13 +8,10 @@
 	<title>天天生鲜-首页</title>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css">
-	<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="../js/slide.js"></script>
 </head>
-
-
-
 
 <body>
 	<div class="header_con">
@@ -46,7 +43,7 @@
 					<span>|</span>
 					<a href="WEB-INF/user_center_info.jsp">用户中心</a>
 					<span>|</span>
-					<a href="WEB-INF/cart.jsp">我的购物车</a>
+					<a href="${pageContext.request.contextPath}/cart/goto">我的购物车</a>
 					<span>|</span>
 					<a href="WEB-INF/user_center_order.jsp">我的订单</a>
 				</div>
@@ -177,22 +174,22 @@
 			<ul class="goods_list fl">
 				<li>
 					<h4><a href="#">青岛野生海捕大青虾</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods/goods018.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods/goods018.jpg"></a>
 					<div class="prize">¥ 48.00</div>
 				</li>
 				<li>
 					<h4><a href="#">扇贝</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods/goods019.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods/goods019.jpg"></a>
 					<div class="prize">¥ 46.00</div>
 				</li>
 				<li>
 					<h4><a href="#">冷冻秋刀鱼</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods/goods020.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods/goods020.jpg"></a>
 					<div class="prize">¥ 19.00</div>
 				</li>
 				<li>
 					<h4><a href="#">基围虾</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods/goods021.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods/goods021.jpg"></a>
 					<div class="prize">¥ 25.00</div>
 				</li>
 			</ul>
@@ -216,22 +213,22 @@
 			<ul class="goods_list fl">
 				<li>
 					<h4><a href="#">维多利亚葡萄维多利亚葡萄维多利亚葡萄维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 				<li>
 					<h4><a href="#">维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 				<li>
 					<h4><a href="#">维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 				<li>
 					<h4><a href="#">维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 			</ul>
@@ -255,22 +252,22 @@
 			<ul class="goods_list fl">
 				<li>
 					<h4><a href="#">维多利亚葡萄维多利亚葡萄维多利亚葡萄维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 				<li>
 					<h4><a href="#">维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 				<li>
 					<h4><a href="#">维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 				<li>
 					<h4><a href="#">维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 			</ul>
@@ -294,22 +291,22 @@
 			<ul class="goods_list fl">
 				<li>
 					<h4><a href="#">维多利亚葡萄维多利亚葡萄维多利亚葡萄维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 				<li>
 					<h4><a href="#">维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 				<li>
 					<h4><a href="#">维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 				<li>
 					<h4><a href="#">维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 			</ul>
@@ -333,22 +330,22 @@
 			<ul class="goods_list fl">
 				<li>
 					<h4><a href="#">维多利亚葡萄维多利亚葡萄维多利亚葡萄维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 				<li>
 					<h4><a href="#">维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 				<li>
 					<h4><a href="#">维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 				<li>
 					<h4><a href="#">维多利亚葡萄</a></h4>
-					<a href="WEB-INF/detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
+					<a href="detail.jsp"><img src="${pageContext.request.contextPath}/images/goods.jpg"></a>
 					<div class="prize">¥ 38.00</div>
 				</li>
 			</ul>

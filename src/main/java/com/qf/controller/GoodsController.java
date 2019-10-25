@@ -41,7 +41,7 @@ public class GoodsController {
 
         request.setAttribute("goods2", goods2);
 
-        return "forward:/WEB-INF/detail.jsp";
+        return "detail";
     }
 
 
