@@ -6,7 +6,7 @@
 
 <mapper namespace="com.qf.dao.GoodsDAO">
 
-
+    <cache type="com.qf.cache.MyCache"></cache>
     <!--根据id查询商品详细信息显示-->
     <select id="queryId" resultType="Goods">
         select * from goods where id=(#{id})

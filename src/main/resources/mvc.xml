@@ -35,5 +35,6 @@
     -->
     <mvc:default-servlet-handler/>
 
-  <!--  <bean class="com.qf.resolver.MyExceptionResolver"></bean>-->
+    
+   <!-- <bean class="com.qf.resolver.MyExceptionResolver"></bean>-->
 </beans>

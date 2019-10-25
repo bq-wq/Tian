@@ -6,7 +6,7 @@
 
 <mapper namespace="com.qf.dao.CartDAO">
 
-
+    <cache type="com.qf.cache.MyCache"></cache>
     <select id="findByUidPid" resultType="Cart">
 
         select  * from cart where   pid=#{pid} and  uid=#{uid}

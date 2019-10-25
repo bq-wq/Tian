@@ -6,6 +6,8 @@
 
 <mapper namespace="com.qf.dao.GoodsTypeDAO">
 
+    <cache type="com.qf.cache.MyCache"></cache>
+
     <select id="queryall" resultType="GoodsType">
         select * from goods_type
 

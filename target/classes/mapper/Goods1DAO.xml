@@ -6,6 +6,8 @@
 
 <mapper namespace="com.qf.dao.Goods1DAO">
 
+
+    <cache type="com.qf.cache.MyCache"></cache>
     <!--主页列表显示前4条 应该用关联查询查其价格-->
     <select id="queryall" resultType="Goods1">
         select * from goods1 where typeid = #{typeid} limit 0,4
